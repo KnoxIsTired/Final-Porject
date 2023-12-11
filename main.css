@@ -1,0 +1,45 @@
+/*this is a comment*/
+
+/*Lets use CSS to style the body tag*/
+
+body {
+    background-color: antiquewhite;
+    /*lets style the font color of the body tag to a color*/
+    color:coral;
+}
+
+/*We will use CSS to syle the Nav properties*/
+nav {
+    /*set height to 600px*/
+    height: 600px;
+    /*set width to 200*/
+    width: 200px;
+    /*set floats to left*/
+    float: left;
+    /*set padding to 5*/
+    padding: 5px;
+    /*set line height to 30*/
+    line-height:30px
+}
+
+/*we will set the footer properties*/
+footer{
+/*set the tect to align center*/
+text-align:center;
+/*margin right*/
+margin-right:200px;
+
+}
+
+/*header properties are here*/
+header {
+    /*align tect to center*/
+    text-align:center;
+}
+
+/*lets use css to style the memeImage Properties*/ 
+memeImage{
+    margin-right : 200px;
+    width:200px;
+    height:200px;
+}
