@@ -1,0 +1,136 @@
+<!--This tells the browser what type of document it is-->
+<!--Kross Moore-->
+<!DOCTYPE html>
+<html lang ="en">
+
+    <head>
+        <meta charset= "utf-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>Water Bottle Plant</title>
+        <!--leaving html and about to start css-->
+        <style>
+            /*This is a stylign css comment*/
+            /*style the body*/
+                body{
+                    font-family:Arial, Helvetica, sans-serif;
+                    background-color: olivedrab;
+                    margin: 0;
+                    padding:20px;
+                    color: purple;
+                    background-image: url('water_bottle_factory.png');
+                }
+                /*this styles the game console*/
+                #game-container{
+                    max-width:600px;
+                    margin:auto;
+                    padding:20px;
+                    background-color: lightblue;
+                    border: 5px dotted honeydew;
+                    border-radius: 8px;
+                }
+                /*this styles how each bottle selection will look*/
+                .bottle{
+                    border: 1px solid lightblue;
+                    margin-bottom: 10px;
+                    padding:10px;
+                    border-radius: 4px;
+                }
+                /*this styles EVERY button made*/
+                button{
+                    padding:5px 10px;
+                    margin-top: 10px;
+
+                }
+
+                /*style feedback color of the class itop-information to pretty color*/
+                .top-information{
+                    background-color:mediumseagreen;
+                    margin:auto;
+                    padding:10px;
+                    border:5px solid lightgoldenrodyellow;
+                    border-radius: 5px;
+                }
+
+                
+        </style>
+
+    </head>
+
+    <body>
+        <!--this creates an id for the game containter in which we can put information and give properties-->
+        <div id="game-container">
+            <h1>Water Bottle Factory</h1>
+            <div id="directions" class = "top-information">
+                <p>Welcome to Hillcrest Water Bottle Factory! Here you'll hire workers to scrap metal to make metal water bottles and hire drivers to send them out.</p>
+                <p>The more upgrades you do the faster your workers will work and the more drivers you'll have to make cleaner water possible for everyone!</p>
+            </div>
+            <div id="credits" class = "top-information">
+                <h2>Metal:<span id="credits-amount">0</span></h2>
+
+            </div>
+            <!--this creates an id for the bottles so that the bottles can actually be used-->
+            <div id="bottles-container">
+                <!--we are going to use javascript to add bottles-->
+            </div>
+        </div>
+        <!--we are leaving html and going into javascript-->
+        <script>
+            //create our class for bottles
+            class Bottle{
+                constructor(name, serviceCost){
+                    this.name = name;
+                    this.serviceCost = serviceCost;
+                }
+                //this is a method, methods are part of classes
+                service(){
+                    game.credits = game.credits + this.serviceCost;
+                    game.updateCreditsDisplay();
+                }
+            }
+            //create our game class
+            class Game{
+                constructor(){
+                    this.credits = 0;
+                    this.bottle = [];
+                }
+
+                //create a method to update credits
+                updateCreditsDisplay(){
+                    document.getElementById("credits-amount").innerText = this.credits;
+
+                }
+                //create method to actually add a bottle to your count
+                addBottle(bottle){
+                    this.bottle.push(bottle);
+                    this.displayBottle(bottle);
+                }
+                //create a method to actually display the bottle so we can collect money for it
+                displayBottle(bottle){
+                    const container = document.getElementById("bottles-container");
+                    const bottleDiv = document.createElement("div");
+                    bottleDiv.classList.add("bottle");
+                    bottleDiv.innerHTML = "<h2>" + bottle.name + "<h2><p>Service Cost:" + bottle.serviceCost + "credits</p>";
+                    bottleDiv.onclick = function(){
+                        bottle.service();
+                    };
+                    container.appendChild(bottleDiv);
+                    }   
+            }
+
+            const game = new Game();
+
+            //this creates new bottles that cost different amounts so that each time you recieve a different reward
+            const bottles = [
+                new Bottle("Regular Water Bottle", 100),
+                new Bottle("Metal Water Bottle", 200),
+                new Bottle("Cardboard Water Bottle",300),
+                new Bottle("Paper Water Bottle", 400),
+                new Bottle("TG Water Bottle",700),
+            ];
+            //this actually adds each bottle to the game and makes sure that it is usable
+            bottles.forEach(bottle => game.addBottle(bottle));
+        </script>
+
+
+    </body>
+</html>
