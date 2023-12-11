@@ -1,0 +1,30 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color:navy;
+}
+
+table{
+    margin: 20px;
+    border-collapse: collapse;
+    width:80%;
+    margin-left:auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width:100%;
+}
+
+th, td{
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid palegoldenrod;
+}
+
+th{
+    background-color: palevioletred;
+    color:aliceblue;
+}
+
+tr:hover{
+    background-color: lightpink;
+}
