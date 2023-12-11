@@ -1,0 +1,107 @@
+<!--Add the doc type tag to tell it to tell the browser what type of document this is-->
+<!DOCTYPE html>
+<!--addd html to start of html doc and set lang to englihs-->
+<html lang = "en">
+    <!--add head tag to contain the metadata for the doc-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content= "width=device-width, inital-scale=1.0">
+
+        <!--add the title tag to give the doc a title-->
+        <title>Dark Academia</title>
+        <!--add CSS to style this page with a dark theme-->
+        <style>
+            body{
+                font-family: 'Courier New', monospace;
+                background-color: #2b2b2b;
+                color: #ffffff;
+            }
+            .container{
+                max-width: 600px;
+                margin: 50px;
+                padding:20px;
+                background-color: navy;
+                box-shadow: 0px 0px 10px  rgba(255,255,255,0.1);
+
+            }
+            .warning{
+                color: red;
+
+            }
+            h1{
+                text-align: center;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--this will be main container for content-->
+        <div class="container ">
+        <!--lets put a header for our title and out Dark Academia App-->
+            <h1> Dark Academia</h1>
+        <!-- add instructions for our user-->
+            <p>User, please apply your documents to enter your Academy</p>
+        <!--add a form to collect users name and password-->
+            <form id="academyForm">
+                <!--add a label to label the first name text box-->
+                <label for="firstName"> First Name:</label>
+                <!--add the first name textbox-->
+                <input type="text" id="firstName" placeholder="Enter your first name" required><br><br>
+                <!--add a label to label the last name text box-->
+                <label for="lastName">Last Name:</label>
+                <!--add the last name textbox-->
+                <input type="text" id="lastName"placeholder="Enter your last name" required><br><br>
+                <!--add the zipcode label-->
+                <label for="zipcode">Zipcode:</label>
+                <!-- add zipcode textbox-->
+                <input type="text" id="zipcode" placeholder="Enter your zipcode" required><br><br>
+                <!--add submit button-->
+                <input type="submit" value="Enter Academy">
+            </form>
+            <!-- adda div to hold warning message-->
+            <div class="warning" id=" warningMessage"></div>
+
+            <!--add a div to hold the mission details which are hidden by default-->
+            <div id="classError" style="display: none;">
+                Your Class Schedule: "Calculus, History, Engilsh A, General Science"
+            </div>
+            <!--Add Javascript-->
+            <script>
+                //add a listener for the form for validation when the user hits submit
+                document.getElementById("academyForm").addEventListener("submit", function(event){
+                    //prevent the default submit action
+                    event.preventDefault();
+                    //get the value from the form
+                    const firstName = document.getElementById("firstName").value;
+                    const lastName= document.getElementById("lastName").value;
+                    const zipcode = document.getElementById("zipcode").value;
+                   
+                    //combine the first and last name
+                    const fullName = firstName +" "+ lastName;
+                   
+                    //validate the length of the entire name and that it is not over 20 characters
+                    if(fullName.legnth > 20){
+                        //if it is too long display warning message
+                        document.getElementById("warningMessage").innerHTML = "Full name is too long for our records";
+                        return;
+                    }
+
+                    //check if the zipcode is 5 characters long, show the warning message
+                    if(zipcode.length != 5){
+                    //if it is not 5 characters long,show warning message
+                        document.getElementById("warningMessage").innerHTML = "Invalid zipcode";
+                        return;
+                    }else{
+                         //if it is 5 characters long, hide the warning message
+                        //show the academy acceptance
+                        document.getElementById("classError").style.display = "block";
+
+                    }
+                    });
+
+            </script>
+        </div>
+
+    </body>
+</html>
