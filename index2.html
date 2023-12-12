@@ -9,6 +9,20 @@
 <meta charset="utf-8">
 <!--defines a title for the document-->
 <title>Musico</title>
+<nav> 
+            <a href="../Final Project/index.html">Home</a><br>
+            <a href="..Table Creation/index3.html">Table</a><br> 
+            <a href="../first project/index6.html">Objectives</a><br>
+            <a href="../hospital simulator/index1.html">Hospital Sim</a><br>
+            <a href="../Website Spy/strings.html">Website Spy</a><br>
+            <a href="../Water Plant Sim/index4.html">Water Plant Sim</a><br>
+            <a href="./index2.html">Musico</a><br>
+            <a href="../11.1/index5.html">Flash Card</a><br>
+            <a href="../first project/index6.html">First Project</a><br>
+            <a href="../first project/boards.html">Boards</a><br>
+
+        
+    </nav> 
 <!--adds structure to the page-->
 <style>
     /*this defines the details for our body*/
@@ -38,6 +52,20 @@
         cursor: pointer;
     }
 
+    nav {
+    /*set height to 600px*/
+    height: 600px;
+    /*set width to 200*/
+    width: 200px;
+    /*set floats to left*/
+    float: left;
+    /*set padding to 5*/
+    padding: 5px;
+    /*set line height to 30*/
+    line-height:30px
+    
+}
+
 </style>
 </head>
 <body>
@@ -46,7 +74,7 @@
     <p>Musico</p>
     <!--adds our music and defines what our box is called-->
     <div id="player">
-        <audio id="audio" src="SongR.mp3" controls></audio>
+        <audio id="audio" src="new/SongR.mp3" controls></audio>
 <!--defines the buttons for stopping, starting, and pausing the audio-->
         <button onclick="playAudio()">Play</button>
         <button onclick="pauseAudio()">Pause</button>
