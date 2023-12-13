@@ -1,0 +1,44 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color:navy;
+}
+
+table{
+    margin: 20px;
+    border-collapse: collapse;
+    width:80%;
+    margin-left:auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width:100%;
+}
+
+nav {
+    /*set height to 600px*/
+    height: 600px;
+    /*set width to 200*/
+    width: 200px;
+    /*set floats to left*/
+    float: left;
+    /*set padding to 5*/
+    padding: 5px;
+    /*set line height to 30*/
+    line-height:30px
+    
+}
+
+th, td{
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid palegoldenrod;
+}
+
+th{
+    background-color: palevioletred;
+    color:aliceblue;
+}
+
+tr:hover{
+    background-color: lightpink;
+}

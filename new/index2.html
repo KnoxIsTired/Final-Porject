@@ -1,0 +1,102 @@
+<!--tells the computer what type od document this is-->
+<!DOCTYPE html>
+<!--tells the computer the language of the document-->
+<html lang="en">
+<!--gives the document a heading-->
+<head>
+
+
+<meta charset="utf-8">
+<!--defines a title for the document-->
+<title>Musico</title>
+<nav> 
+            <a href="../Final Project/index.html">Home</a><br>
+            <a href="..Table Creation/index3.html">Table</a><br> 
+            <a href="../first project/index6.html">Objectives</a><br>
+            <a href="../hospital simulator/index1.html">Hospital Sim</a><br>
+            <a href="../Website Spy/strings.html">Website Spy</a><br>
+            <a href="../Water Plant Sim/index4.html">Water Plant Sim</a><br>
+            <a href="./index2.html">Musico</a><br>
+            <a href="../11.1/index5.html">Flash Card</a><br>
+            <a href="../first project/index6.html">First Project</a><br>
+            <a href="../first project/boards.html">Boards</a><br>
+
+        
+    </nav> 
+<!--adds structure to the page-->
+<style>
+    /*this defines the details for our body*/
+    body {
+        display: flex;
+        justify-content :center;
+        align-items :center;
+        height: 100vh;
+        background-color: blanchedalmond;
+    }
+    /*this is the body for the player section of the audio*/
+    #player{
+        background-color: black;
+        padding:20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    }
+    /*this defines the orientation of our buttons*/
+    button{
+        margin: 5px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: blue;
+        color: black;
+        cursor: pointer;
+    }
+
+    nav {
+    /*set height to 600px*/
+    height: 600px;
+    /*set width to 200*/
+    width: 200px;
+    /*set floats to left*/
+    float: left;
+    /*set padding to 5*/
+    padding: 5px;
+    /*set line height to 30*/
+    line-height:30px
+    
+}
+
+</style>
+</head>
+<body>
+    <!--adds a title to our audio playing box-->
+    <h1>Musico</h1>
+    <p>Musico</p>
+    <!--adds our music and defines what our box is called-->
+    <div id="player">
+        <audio id="audio" src="new/SongR.mp3" controls></audio>
+<!--defines the buttons for stopping, starting, and pausing the audio-->
+        <button onclick="playAudio()">Play</button>
+        <button onclick="pauseAudio()">Pause</button>
+        <button onclick="stopAudio()">Stop</button>
+        </div>
+
+    <script>
+        //adds the varible of audio to our player
+        var audio= document.getElementById("audio");
+//adds a function for the button so that when we press it, it actually works
+        function playAudio() {
+            audio.play();
+        }
+//adds a function so that on the press of the button it pauses the music
+        function pauseAudio() {
+            audio.pause();
+        }
+//adds a function so that on the press of a button it stops the music
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>    
+</body>
+</html>
